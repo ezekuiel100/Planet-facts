@@ -1,6 +1,9 @@
+import Nav from "./components/Nav";
+
 function App() {
   return (
-    <div className="bg-black">
+    <div className="bg-[#070724]">
+      <Nav />
       <svg xmlns="http://www.w3.org/2000/svg" width="1532" height="1291">
         <g fill="#FFF" fill-rule="evenodd" opacity=".202">
           <circle cx="1155.5" cy="369.5" r="3.5" />

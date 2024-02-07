@@ -1,10 +1,10 @@
 function Nav() {
   return (
-    <header className="bg-black text-white font-bold flex justify-center flex-shrink-0">
-      <div className="py-6 px-16 max-w-[100rem] flex w-full justify-between  border-b border-gray-400 ">
-        <p className="text-2xl ">THE PLANETS</p>
+    <header className=" text-white font-bold flex justify-center flex-shrink-0">
+      <div className="py-6 px-16 max-w-[100rem] flex w-full justify-between items-center border-b border-[#38384f] ">
+        <p className="text-2xl font-antonio">THE PLANETS</p>
         <nav>
-          <ul className="flex gap-8 text-gray-400">
+          <ul className="flex gap-8 text-gray-400 uppercase text-sm font-spartan">
             <li>
               <a href="#"> Mercury </a>
             </li>
