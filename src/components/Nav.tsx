@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Nav() {
   return (
     <header className=" text-white font-bold flex justify-center flex-shrink-0">
@@ -6,28 +8,28 @@ function Nav() {
         <nav>
           <ul className="flex gap-8 text-gray-400 uppercase text-sm font-spartan">
             <li>
-              <a href="#"> Mercury </a>
+              <Link to="/"> Mercury </Link>
             </li>
             <li>
-              <a href="#"> Venus </a>
+              <Link to="/"> Venus </Link>
             </li>
             <li>
-              <a href="#"> Earth </a>
+              <Link to="/"> Earth </Link>
             </li>
             <li>
-              <a href="#"> Mars </a>
+              <Link to="/"> Mars </Link>
             </li>
             <li>
-              <a href="#"> Jupiter</a>
+              <Link to="/"> Jupiter</Link>
             </li>
             <li>
-              <a href="#"> Saturn </a>
+              <Link to="/"> Saturn </Link>
             </li>
             <li>
-              <a href="#"> Uranus </a>
+              <Link to="/"> Uranus </Link>
             </li>
             <li>
-              <a href="#"> Neptune </a>
+              <Link to="/"> Neptune </Link>
             </li>
           </ul>
         </nav>
