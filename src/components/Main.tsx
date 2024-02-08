@@ -23,10 +23,11 @@ export type Planet = {
 
 function Main({ planet }: Planet) {
   const [currentyPlanet, setCurrentyPlanet] = useState(planet.overview);
+  const [active, setActive] = useState("01");
 
   return (
-    <main className="  flex justify-center items-center py-32">
-      <div className=" max-w-[70rem] grid grid-cols-3 mx-auto">
+    <main className="flex justify-center items-center py-32">
+      <div className="max-w-[70rem] grid grid-cols-3 mx-auto">
         <div className="col-span-2 m-auto w-full  ">
           <img src={currentyPlanet.img} className="w-[50%] m-auto" />
         </div>
@@ -45,16 +46,22 @@ function Main({ planet }: Planet) {
           <Info
             number={"01"}
             text={"OVERVIEW"}
+            isActive={active}
+            onActive={setActive}
             onCurrentyPlanet={() => setCurrentyPlanet(planet.overview)}
           />
           <Info
             number={"02"}
             text={"INTERNAL STRUCTURE"}
+            isActive={active}
+            onActive={setActive}
             onCurrentyPlanet={() => setCurrentyPlanet(planet.internal)}
           />
           <Info
             number={"03"}
             text={"SURFACE GEOLOGY"}
+            isActive={active}
+            onActive={setActive}
             onCurrentyPlanet={() => setCurrentyPlanet(planet.surface)}
           />
         </div>
