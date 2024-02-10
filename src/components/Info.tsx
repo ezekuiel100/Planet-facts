@@ -21,7 +21,7 @@ function Info({
   return (
     <div
       className={`${
-        isActive === number ? "bg-[#838391] text-white" : ""
+        isActive === number ? "bg-[#419ebb] text-white" : ""
       } flex gap-4 border border-[#38384f] text-[#838391] p-3 w-72 mb-4 cursor-pointer font-bold hover:bg-[#838391] hover:text-white`}
       onClick={handleClick}
     >

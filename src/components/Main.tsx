@@ -1,32 +1,34 @@
 import { useState } from "react";
-import Info from "./Info";
+import PlanetInfo from "./PlanetInfo";
+import PlanetData from "./PlanetData";
 
 export type Planet = {
-  planet: {
-    name: string;
-    overview: {
-      info: string;
-      img: string;
-    };
-
-    internal: {
-      info: string;
-      img: string;
-    };
-
-    surface: {
-      info: string;
-      img: string;
-    };
+  name: string;
+  overview: {
+    info: string;
+    img: string;
   };
+
+  internal: {
+    info: string;
+    img: string;
+  };
+
+  surface: {
+    info: string;
+    img: string;
+  };
+  rotationTime: string;
+  revolutionTime: string;
+  radius: string;
+  averageTemperature: string;
 };
 
-function Main({ planet }: Planet) {
+function Main({ planet }: { planet: Planet }) {
   const [currentyPlanet, setCurrentyPlanet] = useState(planet.overview);
-  const [active, setActive] = useState("01");
 
   return (
-    <main className="flex justify-center items-center py-32">
+    <main className="py-32">
       <div className="max-w-[70rem] grid grid-cols-3 mx-auto">
         <div className="col-span-2 m-auto w-full  ">
           <img src={currentyPlanet.img} className="w-[50%] m-auto" />
@@ -43,29 +45,11 @@ function Main({ planet }: Planet) {
             Source : <a href="#">Wikipedia</a>
           </p>
 
-          <Info
-            number={"01"}
-            text={"OVERVIEW"}
-            isActive={active}
-            onActive={setActive}
-            onCurrentyPlanet={() => setCurrentyPlanet(planet.overview)}
-          />
-          <Info
-            number={"02"}
-            text={"INTERNAL STRUCTURE"}
-            isActive={active}
-            onActive={setActive}
-            onCurrentyPlanet={() => setCurrentyPlanet(planet.internal)}
-          />
-          <Info
-            number={"03"}
-            text={"SURFACE GEOLOGY"}
-            isActive={active}
-            onActive={setActive}
-            onCurrentyPlanet={() => setCurrentyPlanet(planet.surface)}
-          />
+          <PlanetInfo onCurrentyPlanet={setCurrentyPlanet} planet={planet} />
         </div>
       </div>
+
+      <PlanetData planet={planet} />
     </main>
   );
 }

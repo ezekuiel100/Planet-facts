@@ -14,6 +14,13 @@ const mercuryInfo = {
     info: "Mercury's surface is similar in appearance to that of the Moon, showing extensive mare-like plains and heavy cratering, indicating that it has been geologically inactive for billions of years. It is more heterogeneous than either Mars's or the Moon’s.",
     img: "images/geology-mercury.png",
   },
+  rotationTime: "58.6 DAYS",
+
+  revolutionTime: "87.97 DAYS",
+
+  radius: "2,439.7 KM",
+
+  averageTemperature: "430°C",
 };
 
 function Mercury() {
