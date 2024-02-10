@@ -11,25 +11,25 @@ function Nav() {
               <Link to="/"> Mercury </Link>
             </li>
             <li>
-              <Link to="/"> Venus </Link>
+              <Link to="/venus"> Venus </Link>
             </li>
             <li>
-              <Link to="/"> Earth </Link>
+              <Link to="/earth"> Earth </Link>
             </li>
             <li>
-              <Link to="/"> Mars </Link>
+              <Link to="/mars"> Mars </Link>
             </li>
             <li>
-              <Link to="/"> Jupiter</Link>
+              <Link to="/jupiter"> Jupiter</Link>
             </li>
             <li>
-              <Link to="/"> Saturn </Link>
+              <Link to="/saturn"> Saturn </Link>
             </li>
             <li>
-              <Link to="/"> Uranus </Link>
+              <Link to="/uranus"> Uranus </Link>
             </li>
             <li>
-              <Link to="/"> Neptune </Link>
+              <Link to="/neptune"> Neptune </Link>
             </li>
           </ul>
         </nav>
