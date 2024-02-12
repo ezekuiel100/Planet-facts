@@ -1,20 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Info from "./Info";
-import { Planet } from "./Main";
 
-type PlanetProps = {
-  onCurrentyPlanet: React.Dispatch<
-    React.SetStateAction<{
-      info: string;
-      img: string;
-    }>
-  >;
+// type PlanetProps = {
+//   onCurrentyPlanet: React.Dispatch<
+//     React.SetStateAction<{
+//       info: string;
+//       img: string;
+//     }>
+//   >;
 
-  planet: Planet;
-};
+//   planet: Planet;
+// };
 
-function PlanetInfo({ curentyImage, onImages, img }) {
+function PlanetInfo({ setPlanetImages, planet, setPlanetInfo }: {}) {
   const [active, setActive] = useState("01");
+
+  useEffect(() => {
+    setActive("01"); // Redefinir o estado active para "01"
+  }, [planet]);
 
   return (
     <div>
@@ -23,24 +26,27 @@ function PlanetInfo({ curentyImage, onImages, img }) {
         text={"OVERVIEW"}
         isActive={active}
         onActive={setActive}
-        onImages={onImages}
-        img={img}
+        setPlanetImages={setPlanetImages}
+        planet={planet}
+        setPlanetInfo={setPlanetInfo}
       />
       <Info
         number={"02"}
         text={"INTERNAL STRUCTURE"}
         isActive={active}
         onActive={setActive}
-        onImages={onImages}
-        img={img}
+        setPlanetImages={setPlanetImages}
+        planet={planet}
+        setPlanetInfo={setPlanetInfo}
       />
       <Info
         number={"03"}
         text={"SURFACE GEOLOGY"}
         isActive={active}
         onActive={setActive}
-        onImages={onImages}
-        img={img}
+        setPlanetImages={setPlanetImages}
+        planet={planet}
+        setPlanetInfo={setPlanetInfo}
       />
     </div>
   );

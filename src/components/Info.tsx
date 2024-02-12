@@ -6,9 +6,28 @@ type infoProps = {
   onCurrentyPlanet: () => void;
 };
 
-function Info({ number, text, isActive, onActive, onImage, img }) {
+function Info({
+  number,
+  text,
+  isActive,
+  onActive,
+  setPlanetImages,
+  planet,
+  setPlanetInfo,
+}) {
   function handleClick() {
     onActive(number);
+
+    if (number == "01") {
+      setPlanetImages(planet.images.planet);
+      setPlanetInfo(planet.overview.content);
+    } else if (number == "02") {
+      setPlanetImages(planet.images.internal);
+      setPlanetInfo(planet.structure.content);
+    } else if (number == "03") {
+      setPlanetImages(planet.images.geology);
+      setPlanetInfo(planet.geology.content);
+    }
   }
 
   return (
