@@ -13,7 +13,7 @@ type PlanetProps = {
   planet: Planet;
 };
 
-function PlanetInfo({ onCurrentyPlanet, planet }: PlanetProps) {
+function PlanetInfo({ curentyImage, onImages, img }) {
   const [active, setActive] = useState("01");
 
   return (
@@ -23,21 +23,24 @@ function PlanetInfo({ onCurrentyPlanet, planet }: PlanetProps) {
         text={"OVERVIEW"}
         isActive={active}
         onActive={setActive}
-        onCurrentyPlanet={() => onCurrentyPlanet(planet.overview)}
+        onImages={onImages}
+        img={img}
       />
       <Info
         number={"02"}
         text={"INTERNAL STRUCTURE"}
         isActive={active}
         onActive={setActive}
-        onCurrentyPlanet={() => onCurrentyPlanet(planet.internal)}
+        onImages={onImages}
+        img={img}
       />
       <Info
         number={"03"}
         text={"SURFACE GEOLOGY"}
         isActive={active}
         onActive={setActive}
-        onCurrentyPlanet={() => onCurrentyPlanet(planet.surface)}
+        onImages={onImages}
+        img={img}
       />
     </div>
   );

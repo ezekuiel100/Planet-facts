@@ -8,7 +8,7 @@ function Nav() {
         <nav>
           <ul className="flex gap-8 text-gray-400 uppercase text-sm font-spartan">
             <li>
-              <Link to="/"> Mercury </Link>
+              <Link to="/mercury"> Mercury </Link>
             </li>
             <li>
               <Link to="/venus"> Venus </Link>

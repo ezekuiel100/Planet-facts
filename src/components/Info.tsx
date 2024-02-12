@@ -6,16 +6,9 @@ type infoProps = {
   onCurrentyPlanet: () => void;
 };
 
-function Info({
-  number,
-  text,
-  isActive,
-  onActive,
-  onCurrentyPlanet,
-}: infoProps) {
+function Info({ number, text, isActive, onActive, onImage, img }) {
   function handleClick() {
     onActive(number);
-    onCurrentyPlanet();
   }
 
   return (
