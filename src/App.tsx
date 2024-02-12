@@ -1,8 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Nav from "./components/Nav";
 
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PlanetsPage from "./page/PlanetsPage";
+
+export const PlanetContext = createContext();
 
 export type Planet = {
   name: string;
@@ -34,35 +36,28 @@ function App() {
     <div className="bg-[#070724] bg-[url('images/background-stars.svg')]">
       <BrowserRouter>
         <Nav />
+
         <Routes>
-          {planetsData.length > 0 && (
-            <Route
-              path="/"
-              element={
-                <PlanetsPage
-                  planet={planetsData[0]}
-                  planetImages={planetsData[0].images.planet}
-                  setPlanetImages={setPlanetImages}
-                  setPlanetInfo={setPlanetInfo}
-                  planetInfo={planetInfo}
-                />
-              }
-            />
-          )}
+          <Route path="/" element={<Navigate to="/mercury" replace />} />
+
           {planetsData.length > 0 &&
             planetsData.map((planet) => {
               return (
                 <Route
                   key={planet.name}
-                  path={`/${planet.name.toLowerCase()}`}
+                  path={`${planet.name.toLowerCase()}`}
                   element={
-                    <PlanetsPage
-                      planet={planet}
-                      planetImages={planetImages}
-                      setPlanetImages={setPlanetImages}
-                      setPlanetInfo={setPlanetInfo}
-                      planetInfo={planetInfo}
-                    />
+                    <PlanetContext.Provider
+                      value={{
+                        planet,
+                        planetImages,
+                        setPlanetImages,
+                        setPlanetInfo,
+                        planetInfo,
+                      }}
+                    >
+                      <PlanetsPage />
+                    </PlanetContext.Provider>
                   }
                 />
               );

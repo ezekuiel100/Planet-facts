@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Info from "./Info";
-import { Planet } from "../App";
+import { Planet, PlanetContext } from "../App";
 
-type PlanetInfoProps = {
-  setPlanetImages: React.Dispatch<React.SetStateAction<string | undefined>>;
-  planet: Planet;
-  setPlanetInfo: React.Dispatch<React.SetStateAction<string | undefined>>;
-};
+// type PlanetInfoProps = {
+//   setPlanetImages: React.Dispatch<React.SetStateAction<string | undefined>>;
+//   planet: Planet;
+//   setPlanetInfo: React.Dispatch<React.SetStateAction<string | undefined>>;
+// };
 
-function PlanetInfo({
-  setPlanetImages,
-  planet,
-  setPlanetInfo,
-}: PlanetInfoProps) {
+function PlanetInfo() {
   const [active, setActive] = useState("01");
+
+  const { planet, setPlanetImages, setPlanetInfo } = useContext(PlanetContext);
 
   useEffect(() => {
     setActive("01"); // Redefinir o estado active para "01"

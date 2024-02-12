@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import PlanetData from "../components/PlanetData";
 import PlanetInfo from "../components/PlanetInfo";
-import { Planet } from "../App";
+import { Planet, PlanetContext } from "../App";
 
-type PlanetProps = {
+type PlanetContext = {
   planet: Planet;
   planetImages: string | undefined;
   setPlanetImages: React.Dispatch<React.SetStateAction<string | undefined>>;
@@ -11,13 +11,15 @@ type PlanetProps = {
   planetInfo: string | undefined;
 };
 
-function PlanetsPage({
-  planet,
-  planetImages,
-  setPlanetImages,
-  setPlanetInfo,
-  planetInfo,
-}: PlanetProps) {
+function PlanetsPage() {
+  const {
+    planet,
+    planetImages,
+    setPlanetImages,
+    setPlanetInfo,
+    planetInfo,
+  }: PlanetContext = useContext(PlanetContext);
+
   useEffect(() => {
     setPlanetImages(planet.images.planet);
     setPlanetInfo(planet.overview.content);
@@ -41,11 +43,7 @@ function PlanetsPage({
             Source : <a href="#">Wikipedia</a>
           </p>
 
-          <PlanetInfo
-            setPlanetImages={setPlanetImages}
-            planet={planet}
-            setPlanetInfo={setPlanetInfo}
-          />
+          <PlanetInfo />
         </div>
       </div>
 
