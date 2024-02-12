@@ -1,9 +1,13 @@
+import { Planet } from "../App";
+
 type infoProps = {
   number: string;
   text: string;
   isActive: string;
-  onActive: (number: string) => void;
-  onCurrentyPlanet: () => void;
+  onActive: React.Dispatch<React.SetStateAction<string>>;
+  setPlanetImages: React.Dispatch<React.SetStateAction<string | undefined>>;
+  planet: Planet;
+  setPlanetInfo: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 
 function Info({
@@ -14,7 +18,7 @@ function Info({
   setPlanetImages,
   planet,
   setPlanetInfo,
-}) {
+}: infoProps) {
   function handleClick() {
     onActive(number);
 

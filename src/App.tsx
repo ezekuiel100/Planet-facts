@@ -4,10 +4,22 @@ import Nav from "./components/Nav";
 import { useEffect, useState } from "react";
 import PlanetsPage from "./page/PlanetsPage";
 
+export type Planet = {
+  name: string;
+  overview: { content: string; source: string };
+  structure: { content: string; source: string };
+  images: { geology: string; internal: string; planet: string };
+  geology: { content: string; source: string };
+  rotation: string;
+  revolution: string;
+  radius: string;
+  temperature: string;
+};
+
 function App() {
-  const [planetsData, setPlanetsData] = useState([]);
-  const [planetImages, setPlanetImages] = useState();
-  const [planetInfo, setPlanetInfo] = useState();
+  const [planetsData, setPlanetsData] = useState<Planet[]>([]);
+  const [planetImages, setPlanetImages] = useState<string | undefined>();
+  const [planetInfo, setPlanetInfo] = useState<string | undefined>();
 
   useEffect(() => {
     async function fetchData() {

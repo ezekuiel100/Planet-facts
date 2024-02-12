@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import Info from "./Info";
+import { Planet } from "../App";
 
-// type PlanetProps = {
-//   onCurrentyPlanet: React.Dispatch<
-//     React.SetStateAction<{
-//       info: string;
-//       img: string;
-//     }>
-//   >;
+type PlanetInfoProps = {
+  setPlanetImages: React.Dispatch<React.SetStateAction<string | undefined>>;
+  planet: Planet;
+  setPlanetInfo: React.Dispatch<React.SetStateAction<string | undefined>>;
+};
 
-//   planet: Planet;
-// };
-
-function PlanetInfo({ setPlanetImages, planet, setPlanetInfo }: {}) {
+function PlanetInfo({
+  setPlanetImages,
+  planet,
+  setPlanetInfo,
+}: PlanetInfoProps) {
   const [active, setActive] = useState("01");
 
   useEffect(() => {
