@@ -1,4 +1,9 @@
-function PlanetData({ planet }) {
+import { useContext } from "react";
+import { Planet, PlanetContext } from "../App";
+
+function PlanetData() {
+  const { planet } = useContext(PlanetContext) as { planet: Planet };
+
   return (
     <div className="flex gap-6 justify-center mt-24">
       <div className="border p-6 border-[#38384f] text-4xl font-bold shrink-0  w-[18rem]">

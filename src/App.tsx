@@ -22,15 +22,21 @@ function App() {
   const [planetsData, setPlanetsData] = useState<Planet[]>([]);
   const [planetImages, setPlanetImages] = useState<string | undefined>();
   const [planetInfo, setPlanetInfo] = useState<string | undefined>();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       const data = await fetch("data.json");
       const res = await data.json();
+      setLoading(false);
       setPlanetsData(res);
     }
     fetchData();
   }, []);
+
+  if (loading) {
+    return <div className="text-4xl text-black">Loading....</div>;
+  }
 
   return (
     <div className="bg-[#070724] bg-[url('images/background-stars.svg')]">
@@ -40,28 +46,27 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/mercury" replace />} />
 
-          {planetsData.length > 0 &&
-            planetsData.map((planet) => {
-              return (
-                <Route
-                  key={planet.name}
-                  path={`${planet.name.toLowerCase()}`}
-                  element={
-                    <PlanetContext.Provider
-                      value={{
-                        planet,
-                        planetImages,
-                        setPlanetImages,
-                        setPlanetInfo,
-                        planetInfo,
-                      }}
-                    >
-                      <PlanetsPage />
-                    </PlanetContext.Provider>
-                  }
-                />
-              );
-            })}
+          {planetsData.map((planet) => {
+            return (
+              <Route
+                key={planet.name}
+                path={`${planet.name.toLowerCase()}`}
+                element={
+                  <PlanetContext.Provider
+                    value={{
+                      planet,
+                      planetImages,
+                      setPlanetImages,
+                      setPlanetInfo,
+                      planetInfo,
+                    }}
+                  >
+                    <PlanetsPage />
+                  </PlanetContext.Provider>
+                }
+              />
+            );
+          })}
         </Routes>
       </BrowserRouter>
     </div>
