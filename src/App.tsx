@@ -4,8 +4,6 @@ import Nav from "./components/Nav";
 import { createContext, useEffect, useState } from "react";
 import PlanetsPage from "./page/PlanetsPage";
 
-export const PlanetContext = createContext();
-
 export type Planet = {
   name: string;
   overview: { content: string; source: string };
@@ -18,6 +16,16 @@ export type Planet = {
   temperature: string;
 };
 
+type ContextType = {
+  planet: Planet;
+  planetImages: string | undefined;
+  setPlanetImages: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setPlanetInfo: React.Dispatch<React.SetStateAction<string | undefined>>;
+  planetInfo: string | undefined;
+};
+
+export const PlanetContext = createContext({} as ContextType);
+
 function App() {
   const [planetsData, setPlanetsData] = useState<Planet[]>([]);
   const [planetImages, setPlanetImages] = useState<string | undefined>();
@@ -26,10 +34,14 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await fetch("data.json");
-      const res = await data.json();
-      setLoading(false);
-      setPlanetsData(res);
+      try {
+        const data = await fetch("data.json");
+        const res = await data.json();
+        setLoading(false);
+        setPlanetsData(res);
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchData();
   }, []);

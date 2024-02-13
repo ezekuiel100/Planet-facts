@@ -1,19 +1,11 @@
 import { useContext, useEffect } from "react";
 import PlanetData from "../components/PlanetData";
 import PlanetInfo from "../components/PlanetInfo";
-import { Planet, PlanetContext } from "../App";
-
-type PlanetContextType = {
-  planet: Planet;
-  planetImages: string | undefined;
-  setPlanetImages: React.Dispatch<React.SetStateAction<string | undefined>>;
-  setPlanetInfo: React.Dispatch<React.SetStateAction<string | undefined>>;
-  planetInfo: string | undefined;
-};
+import { PlanetContext } from "../App";
 
 function PlanetsPage() {
   const { planet, planetImages, setPlanetImages, setPlanetInfo, planetInfo } =
-    useContext(PlanetContext) as PlanetContextType;
+    useContext(PlanetContext);
 
   useEffect(() => {
     setPlanetImages(planet.images.planet);

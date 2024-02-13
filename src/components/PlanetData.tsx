@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Planet, PlanetContext } from "../App";
+import { PlanetContext } from "../App";
 
 function PlanetData() {
-  const { planet } = useContext(PlanetContext) as { planet: Planet };
+  const { planet } = useContext(PlanetContext);
 
   return (
     <div className="flex flex-wrap gap-6 justify-center mt-24 ">
