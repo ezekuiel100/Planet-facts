@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <header className=" text-white font-bold flex justify-center ">
-      <div className="flex flex-col py-6 px-16 max-w-[100rem] w-full justify-between items-center border-b border-[#38384f] lg:flex-row gap-4">
+      <div className="flex flex-col py-6 px-2 max-w-[100rem] w-full  items-center border-b border-[#38384f] lg:flex-row gap-4 justify-between">
         <Link to={"/"}>
           <p className="text-2xl font-antonio">THE PLANETS</p>
         </Link>

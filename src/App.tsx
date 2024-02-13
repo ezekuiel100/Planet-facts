@@ -51,7 +51,7 @@ function App() {
   }
 
   return (
-    <div className="bg-[#070724] bg-[url('images/background-stars.svg')]">
+    <div className="bg-[#070724] h-lvh bg-[url('images/background-stars.svg')]">
       <BrowserRouter>
         <Nav />
 

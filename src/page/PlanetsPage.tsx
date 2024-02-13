@@ -13,7 +13,7 @@ function PlanetsPage() {
   }, [planet, setPlanetImages, setPlanetInfo]);
 
   return (
-    <main className="py-32">
+    <main className="pb-32 pt-10">
       <div className="max-w-[70rem] p-4 grid gap-y-10 mx-auto lg:grid-cols-3 ">
         <div className="col-span-2 m-auto w-full  ">
           <img src={planetImages} className="w-[50%] m-auto" />
