@@ -12,7 +12,7 @@ function PlanetInfo() {
   }, [planet]);
 
   return (
-    <div>
+    <div className="inline-block">
       <Info
         number={"01"}
         text={"OVERVIEW"}

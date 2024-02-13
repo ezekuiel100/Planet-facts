@@ -5,7 +5,7 @@ function PlanetData() {
   const { planet } = useContext(PlanetContext) as { planet: Planet };
 
   return (
-    <div className="flex gap-6 justify-center mt-24">
+    <div className="flex flex-wrap gap-6 justify-center mt-24 ">
       <div className="border p-6 border-[#38384f] text-4xl font-bold shrink-0  w-[18rem]">
         <span className="text-sm block mb-2 text-[#838391] uppercase">
           Rotation Time

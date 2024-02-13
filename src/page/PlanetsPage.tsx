@@ -22,12 +22,12 @@ function PlanetsPage() {
 
   return (
     <main className="py-32">
-      <div className="max-w-[70rem] grid grid-cols-3 mx-auto">
+      <div className="max-w-[70rem] p-4 grid gap-y-10 mx-auto lg:grid-cols-3 ">
         <div className="col-span-2 m-auto w-full  ">
           <img src={planetImages} className="w-[50%] m-auto" />
         </div>
 
-        <div>
+        <div className="text-center lg:text-left">
           <h1 className="text-7xl uppercase font-antonio mb-6">
             {planet.name}
           </h1>

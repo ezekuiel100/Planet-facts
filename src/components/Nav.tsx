@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <header className=" text-white font-bold flex justify-center flex-shrink-0">
-      <div className="py-6 px-16 max-w-[100rem] flex w-full justify-between items-center border-b border-[#38384f] ">
+    <header className=" text-white font-bold flex justify-center ">
+      <div className="flex flex-col py-6 px-16 max-w-[100rem] w-full justify-between items-center border-b border-[#38384f] lg:flex-row gap-4">
         <Link to={"/"}>
           <p className="text-2xl font-antonio">THE PLANETS</p>
         </Link>
         <nav>
-          <ul className="flex gap-8 text-gray-400 uppercase text-sm font-spartan ">
+          <ul className="flex gap-8 flex-wrap text-gray-400 uppercase text-sm font-spartan ">
             <li className="hover:text-white">
               <Link to="/mercury"> Mercury </Link>
             </li>
