@@ -34,8 +34,15 @@ function PlanetsPage() {
 
           <p className="mb-4 h-36">{planetInfo}</p>
 
-          <p className="mb-10">
-            Source : <a href="#">Wikipedia</a>
+          <p className="mb-10 text-[#838391]">
+            Source :{" "}
+            <a
+              href={planet.overview.source}
+              target="_blank"
+              className="font-bold underline"
+            >
+              Wikipedia
+            </a>
           </p>
 
           <PlanetInfo />
